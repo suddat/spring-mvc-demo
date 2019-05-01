@@ -3,6 +3,7 @@ package com.dev.suddat.springdemo.mvc;
 import javax.validation.Valid;
 
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -38,12 +39,12 @@ public class CustomerController {
 			BindingResult bindingResult) {
 		System.out.println("last name: |"
 				+ theCustomer.getLastName() + "|");
-		System.out.println(bindingResult.hasErrors());
+		//System.out.println(bindingResult);
 		if (bindingResult.hasErrors()) {
 			return "customer-form";
 		} else {
 			return "customer-confirmation";
 		}
 
-	}
+	}	
 }
